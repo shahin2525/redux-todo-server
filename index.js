@@ -9,9 +9,10 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb://localhost:27017`;
-// const uri =
-//   "mongodb+srv://<username>:<password>@cluster0.ax6qyiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// const uri = `mongodb://localhost:27017`;
+
+const uri =
+  "mongodb+srv://redux-todo:0juuUmqLVE9BZqeO@cluster0.ax6qyiu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -86,7 +87,7 @@ const run = async () => {
 run().catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello redux World !");
 });
 
 app.listen(port, () => {
